@@ -1,0 +1,5 @@
+shinyUI(
+  fluidPage(
+    uiOutput('dashboard')
+  )
+)

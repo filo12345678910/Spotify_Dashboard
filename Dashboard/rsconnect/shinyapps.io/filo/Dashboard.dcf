@@ -1,0 +1,14 @@
+name: Dashboard
+title: Dashboard
+username:
+account: filo
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9199529
+bundleId: 7271721
+url: https://filo.shinyapps.io/Dashboard/
+when: 1685214235.59436
+lastSyncTime: 1685214235.59437
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: Dashboard.html|Dashboard.md
