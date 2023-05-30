@@ -1,0 +1,13 @@
+name: Spotify_Dashboard
+title: Spotify_Dashboard
+username:
+account: filo
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9217160
+bundleId: 7283215
+url: https://filo.shinyapps.io/Spotify_Dashboard/
+when: 1685474120.55253
+lastSyncTime: 1685474120.55254
+asMultiple: FALSE
+asStatic: FALSE

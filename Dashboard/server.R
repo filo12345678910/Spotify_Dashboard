@@ -1,7 +1,6 @@
 library(shiny)
+library(shinydashboard)
 
-shinyServer(function(input, output) {
-  output$dashboard <- renderUI({
-    includeHTML('Dashboard.html')
-  })
-})
+function(input, output, session){
+  
+}
