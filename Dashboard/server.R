@@ -22,4 +22,31 @@ function(input, output, session){
   output$graph1 <- renderPlotly({
     generate_graph()
   })
+  
+  country_codes <- read.csv("country_codes.csv", sep = ";")
+  
+  output$graph2 <- renderUI({
+    code <- gsub("\"", "", country_codes$`Alpha.2.code`[country_codes$Country == input$graph2_input])
+    code <- substr(code, 2, nchar(code))
+    
+    result <- tryCatch(
+      {
+        get_featured_playlists(country = code) %>%
+          select(c("name", "id"))
+      },
+      error = function(e) {
+        message("Unavailable country")
+        return(NULL)
+      }
+    )
+    
+    if (is.null(result)) {
+      return("Unavailable country")
+    } else {
+      playlist_links <- lapply(seq_len(nrow(result)), function(i) {
+        tags$a(href = paste0("https://open.spotify.com/playlist/", result$id[i]), target = "_blank", result$name[i], br())
+      })
+      tagList(playlist_links)
+    }
+  })
 }
