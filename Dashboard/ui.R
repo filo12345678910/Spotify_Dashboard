@@ -27,7 +27,7 @@ body <- dashboardBody(
     verbatimTextOutput("text1")
   ),
   box(
-    title = "Songs characteristcs",
+    title = "Albums' info",
     DT::dataTableOutput("table1")
   ),
   box(
