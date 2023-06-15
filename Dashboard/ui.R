@@ -12,7 +12,7 @@ header <- dashboardHeader(
 )
 
 sidebar <- dashboardSidebar(
-  
+  verbatimTextOutput("helpOutput")
 )
 
 body <- dashboardBody(

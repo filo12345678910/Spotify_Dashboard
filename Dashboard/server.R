@@ -7,10 +7,10 @@ library(ggplot2)
 library(plotly)
 library(DT)
 
-showcase.data = get_artist_audio_features("Kendrick Lamar")
-
 Sys.setenv(SPOTIFY_CLIENT_ID = '459c2a8ce83c4d5b8692cd08b60d8cd6')
 Sys.setenv(SPOTIFY_CLIENT_SECRET = '0ac29b401c5947119d7efe12302363a3')
+
+showcase.data = get_artist_audio_features("Kendrick Lamar")
 
 function(input, output, session){
   cached.artist <- reactive({
@@ -91,5 +91,10 @@ function(input, output, session){
       })
       tagList(playlist_links)
     }
+  })
+  output$helpOutput <- renderText({
+    text <- readLines("help.txt", encoding = "UTF-8")
+    text <- paste(text, collapse = "\n")
+    text
   })
 }

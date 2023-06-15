@@ -1,0 +1,12 @@
+Welcome to Spotify Dashboard!
+
+Please type your favourite 
+artist to check different 
+parameters of their song.
+And different parameters
+of their albums.
+
+Also try chosing interesting
+country to check what
+playlist is reccomended
+by spotify today.
