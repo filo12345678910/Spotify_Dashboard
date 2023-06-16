@@ -116,7 +116,7 @@ function(input, output, session){
   })
   
   observeEvent(input$artist.name, {
-    start <- min(cached.artist()$album_release_year)
+    start <- min(real.cached.artist()$album_release_year)
     
     # Update the choices of the selectInput widget with the album names
     updateSliderInput(session, "start_year", min = start, value = start)
