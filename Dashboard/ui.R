@@ -8,7 +8,15 @@ library(plotly)
 library(DT)
 
 header <- dashboardHeader(
-  title = "Spotify Dashboard"
+  title = "Spotify Dashboard",
+  tags$li(
+    class = "dropdown",
+    tags$img(
+      src = "logo.png",
+      height = "50px",
+      style = "padding-top: 5px;"
+    )
+  )
 )
 
 
@@ -47,21 +55,32 @@ body <- dashboardBody(
       box(
         title = "Artist's songs",
         textInput("artist.name", "Artist's name:", value = ""),
-        plotlyOutput("graph1")
+        plotlyOutput("graph1"),
+        solidHeader = T,
+        background = 'lime',
+        collapsible = T
       ),
       box(
         title = "Song analysis",
         selectInput("selected.album", "Select album:", choices = NULL),
         selectInput("selected.track", "Select track:", choices = NULL),
-        plotlyOutput("graph3")
+        plotlyOutput("graph3"),
+        solidHeader = T,
+        background = 'lime',
+        collapsible = T
       ),
       box(
         title = "Albums' info",
-        DT::dataTableOutput("table1")
+        DT::dataTableOutput("table1"),
+        solidHeader = T,
+        collapsible = T
       ),
       box(
         title = "Activity timeline",
-        plotlyOutput("histogram")
+        plotlyOutput("histogram"),
+        solidHeader = T,
+        background = 'lime',
+        collapsible = T
       )
     )
     ),
@@ -69,7 +88,8 @@ body <- dashboardBody(
       box(
         title = "Popular playlists",
         selectInput("graph2_input", "Select Country:", choices = read.csv("country_codes.csv", sep = ";")$Country),
-        uiOutput("graph2")
+        uiOutput("graph2"),
+        solidHeader = T
       )
     )
   )
@@ -80,5 +100,5 @@ ui <- dashboardPage(
   header,
   sidebar,
   body,
-  skin = 'green'
+  skin = 'black'
 )
