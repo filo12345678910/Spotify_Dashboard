@@ -177,4 +177,9 @@ function(input, output, session){
       tagList(playlist_links)
     }
   })
+  output$helpOutput <- renderText({
+    text <- readLines("help.txt", encoding = "UTF-8")
+    text <- paste(text, collapse = "\n")
+    text
+  })
 }
